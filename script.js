@@ -69,3 +69,10 @@ const saveData = event => {
     renderData();
 }
 // batalkan perubahan data
+const cancelData = _ => {
+    formOverlay.style.display = 'none';
+}
+renderData();
+addButton.onclick = addData;
+saveButton.onclick = saveData;
+cancelButton.onclick = cancelData;
