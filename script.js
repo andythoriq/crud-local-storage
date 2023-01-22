@@ -53,3 +53,19 @@ const addData = _ => {
     document.getElementById('age').value = '';
     document.getElementById('email').value = '';
 }
+// menyimpan data
+const saveData = event => {
+    event.preventDefault();
+    const name = document.getElementById('name').value;
+    const age = document.getElementById('age').value;
+    const email = document.getElementById('email').value;
+    if (selectedIndex == null) {
+        data.push({ name, age, email });
+    } else {
+        data[ selectedIndex ] = { name, age, email };
+    }
+    localStorage.setItem('data', JSON.stringify(data));
+    formOverlay.style.display = 'none';
+    renderData();
+}
+// batalkan perubahan data
