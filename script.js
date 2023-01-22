@@ -45,3 +45,11 @@ const renderData = _ => {
         tableBody.appendChild(tr);
     });
 }
+// menambahkan data
+const addData = _ => {
+    formOverlay.style.display = 'flex';
+    selectedIndex = null;
+    document.getElementById('name').value = '';
+    document.getElementById('age').value = '';
+    document.getElementById('email').value = '';
+}
