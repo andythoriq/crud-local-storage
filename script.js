@@ -11,12 +11,14 @@ const renderData = _ => {
     tableBody.innerHTML = '';
     data.forEach((item, i) => {
         const tr = document.createElement('tr');
+        const noTd = document.createElement('td');
         const nameTd = document.createElement('td');
         const ageTd = document.createElement('td');
         const emailTd = document.createElement('td');
         const actionsTd = document.createElement('td');
         const editButton = document.createElement('button');
         const deleteButton = document.createElement('button');
+        noTd.textContent = i + 1;
         nameTd.textContent = item.name;
         ageTd.textContent = item.age;
         emailTd.textContent = item.email;
@@ -32,12 +34,16 @@ const renderData = _ => {
         }
         // saat delete button diclick
         deleteButton.onclick = _ => {
-            data.splice(i, 1);
-            localStorage.setItem('data', JSON.stringify(data));
-            renderData();
+            let yakinHapus = confirm('apakah anda yakin ingin meng-hapus');
+            if (yakinHapus) {
+                data.splice(i, 1);
+                localStorage.setItem("data", JSON.stringify(data));
+                renderData();
+            }
         }
         actionsTd.appendChild(editButton);
         actionsTd.appendChild(deleteButton);
+        tr.appendChild(noTd);
         tr.appendChild(nameTd);
         tr.appendChild(ageTd);
         tr.appendChild(emailTd);
