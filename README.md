@@ -1,4 +1,4 @@
-# crud menggunakan local storage
+# CRUD Menggunakan Local Storage
 
 Aplikasi ini adalah sebuah aplikasi CRUD (Create, Read, Update, Delete) yang memanfaatkan Local Storage sebagai metode penyimpanan data. Aplikasi ini dikembangkan menggunakan HTML, CSS, dan JavaScript.
 
